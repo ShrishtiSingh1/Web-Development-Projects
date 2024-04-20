@@ -1,0 +1,357 @@
+(1) HTML Code - 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="currency_converter.css" >
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+   <div class="container">
+        <div class="box">
+            <div class="heading">
+                Currency Converter
+            </div>
+            <div class="amount-display">
+                <p>Enter Amount</p>
+                <input type="text" id="amount" placeholder="Enter Amount">
+            </div>
+            <div class="drop-list">
+                <div class="from">
+                    <div>From</div>
+                    <div class="select-box">
+                        <img src="https://flagscdn.com/48x36/us.png" alt="">
+                        <select name="" id="s1">
+                            <option value="AED">AED</option>
+                            <option value="ARS">ARS</option>
+                            <option value="AUD">AUD</option>
+                            <option value="BGN">BGN</option>
+                            <option value="BRL">BRL</option>
+                            <option value="BSD">BSD</option>
+                            <option value="CAD">CAD</option>
+                            <option value="CHF">CHF</option>
+                            <option value="CLP">CLP</option>
+                            <option value="CNY">CNY</option>
+                            <option value="COP">COP</option>
+                            <option value="CZK">CZK</option>
+                            <option value="DKK">DKK</option>
+                            <option value="DOP">DOP</option>
+                            <option value="EGP">EGP</option>
+                            <option value="EUR">EUR</option>
+                            <option value="FJD">FJD</option>
+                            <option value="GBP">GBP</option>
+                            <option value="GTQ">GTQ</option>
+                            <option value="HKD">HKD</option>
+                            <option value="HRK">HRK</option>
+                            <option value="HUF">HUF</option>
+                            <option value="IDR">IDR</option>
+                            <option value="ILS">ILS</option>
+                            <option value="INR" selected>INR</option>
+                            <option value="ISK">ISK</option>
+                            <option value="JPY">JPY</option>
+                            <option value="KRW">KRW</option>
+                            <option value="KZT">KZT</option>
+                            <option value="MXN">MXN</option>
+                            <option value="MYR">MYR</option>
+                            <option value="NOK">NOK</option>
+                            <option value="NZD">NZD</option>
+                            <option value="PAB">PAB</option>
+                            <option value="PEN">PEN</option>
+                            <option value="PHP">PHP</option>
+                            <option value="PKR">PKR</option>
+                            <option value="PLN">PLN</option>
+                            <option value="PYG">PYG</option>
+                            <option value="RON">RON</option>
+                            <option value="RUB">RUB</option>
+                            <option value="SAR">SAR</option>
+                            <option value="SEK">SEK</option>
+                            <option value="SGD">SGD</option>
+                            <option value="THB">THB</option>
+                            <option value="TRY">TRY</option>
+                            <option value="TWD">TWD</option>
+                            <option value="UAH">UAH</option>
+                            <option value="USD">USD</option>
+                            <option value="UYU">UYU</option>
+                            <option value="VND">VND</option>
+                            <option value="ZAR">ZAR</option>
+                        </select>
+                    </div>
+                </div>
+                <span class="icon">
+                    <i class='bx bx-transfer-alt'></i>
+                </span>
+                <div class="to">
+                    <p>To</p>
+                    <div class="select-box">
+                        <img src="https://flagscdn.com/48x36/in.png" alt="">
+                        <select name="" id="s2">
+                            <option value="AED">AED</option>
+                            <option value="ARS">ARS</option>
+                            <option value="AUD">AUD</option>
+                            <option value="BGN">BGN</option>
+                            <option value="BRL">BRL</option>
+                            <option value="BSD">BSD</option>
+                            <option value="CAD">CAD</option>
+                            <option value="CHF">CHF</option>
+                            <option value="CLP">CLP</option>
+                            <option value="CNY">CNY</option>
+                            <option value="COP">COP</option>
+                            <option value="CZK">CZK</option>
+                            <option value="DKK">DKK</option>
+                            <option value="DOP">DOP</option>
+                            <option value="EGP">EGP</option>
+                            <option value="EUR">EUR</option>
+                            <option value="FJD">FJD</option>
+                            <option value="GBP">GBP</option>
+                            <option value="GTQ">GTQ</option>
+                            <option value="HKD">HKD</option>
+                            <option value="HRK">HRK</option>
+                            <option value="HUF">HUF</option>
+                            <option value="IDR">IDR</option>
+                            <option value="ILS">ILS</option>
+                            <option value="INR">INR</option>
+                            <option value="ISK">ISK</option>
+                            <option value="JPY">JPY</option>
+                            <option value="KRW">KRW</option>
+                            <option value="KZT">KZT</option>
+                            <option value="MXN">MXN</option>
+                            <option value="MYR">MYR</option>
+                            <option value="NOK">NOK</option>
+                            <option value="NZD">NZD</option>
+                            <option value="PAB">PAB</option>
+                            <option value="PEN">PEN</option>
+                            <option value="PHP">PHP</option>
+                            <option value="PKR">PKR</option>
+                            <option value="PLN">PLN</option>
+                            <option value="PYG">PYG</option>
+                            <option value="RON">RON</option>
+                            <option value="RUB">RUB</option>
+                            <option value="SAR">SAR</option>
+                            <option value="SEK">SEK</option>
+                            <option value="SGD">SGD</option>
+                            <option value="THB">THB</option>
+                            <option value="TRY">TRY</option>
+                            <option value="TWD">TWD</option>
+                            <option value="UAH">UAH</option>
+                            <option value="USD" selected>USD</option>
+                            <option value="UYU">UYU</option>
+                            <option value="VND">VND</option>
+                            <option value="ZAR">ZAR</option>
+                        </select>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="display-conversion">
+                Display conversion : 
+            </div>
+            <div class="generatebtn">
+                 <button id="generate-btn">Generate Exchange Rate</button>
+            </div>
+            <div class="reset">
+                <button id="reset-btn">Reset</button>
+            </div>
+        </div>
+    </div> 
+<script src="currency_converter.js"></script>
+</body>
+</html>
+
+
+(2) CSS Code - 
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    background-color: #a3b18a;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.box{
+    width: 400px;
+    height: 530px;
+    background-color: #E0C2C1;
+    margin-top: 100px;
+    padding: 30px;
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.heading{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.amount-display{
+    margin-top: 50px;
+    font-size: 17px;
+    padding: 5px;
+}
+
+#amount{
+    width: 280px;
+    height: 40px;
+    font-size: 13px;
+    padding: 9px;
+    border: 1px solid #999;
+    border-radius: 6px;
+}
+
+#amount:focus{
+    border: 1px solid black;
+}
+
+.drop-list{
+    display: flex;
+    font-size: 17px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon{
+    padding: 0px 15px 0px 15px;
+}
+
+.generatebtn{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 17px;
+    padding: 5px;
+    border: none;
+}
+
+#generate-btn{
+    padding: 8px;
+    border-radius: 10px;
+    outline: none;
+    width: 330px;
+    height: 40px;
+    background-color: black;
+    color: #fff;
+}
+
+.reset{
+    text-align: center;
+    font-size: 17px;
+    padding: 5px;
+}
+
+#reset-btn{
+    padding: 8px;
+    border-radius: 10px;
+    outline: none;
+    width: 330px;
+    height: 40px;
+    background-color: black;
+    color: #fff;
+}
+
+#generate-btn:hover, #reset-btn:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.display-conversion{
+    margin-top: 20px;
+    border: none;
+    padding: 2px 5px 10px 5px;
+}
+
+select{
+    width: 90px;
+    height: 50px;
+    border: 1px solid #999;
+    padding: 6px;
+}
+
+select:focus{
+    border: 1px solid black;
+}
+
+.select-box select {
+    width: 100%;
+    height: 40px;
+    padding: 6px;
+}
+
+#amount, .select-box select {
+    border: 1px solid #333;
+}
+
+.drop-list .icon {
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .box {
+        width: 80%;
+    }
+
+    #generate-btn, #reset-btn {
+        width: 100%;
+    }
+}
+
+
+(3) JavaScript Code - 
+
+const a = document.getElementById('s1');
+const b = document.getElementById('s2');
+const c = document.getElementById('amount');
+const d = document.querySelector('.display-conversion');
+const e = document.getElementById('generate-btn');
+const f = document.getElementById('reset-btn');
+
+function getExchangeRates(baseCurrency) {
+    return fetch(`https://api.exchangerate-api.com/v4/latest/${baseCurrency}`)
+        .then(response => response.json())
+        .then(data => data.rates)
+        .catch(error => {
+            console.error('Error fetching exchange rates:', error);
+            return null;
+        });
+}
+
+function generateExchangeRate() {
+    const currency_one = a.value;
+    const currency_two = b.value;
+    const amount = parseFloat(c.value);
+
+    getExchangeRates(currency_one)
+        .then(rates => {
+            if (rates) {
+                const exchangeRate = rates[currency_two];
+                const convertedAmount = (amount * exchangeRate).toFixed(2);
+                d.innerText = `Converted Amount: ${convertedAmount} ${currency_two}`;
+            }
+        });
+}
+
+function resetForm() {
+    c.value = '';
+    a.value = 'USD';
+    b.value = 'INR';
+    d.innerText = 'Display conversion : ';
+}
+
+// Event listeners
+e.addEventListener('click', generateExchangeRate);
+f.addEventListener('click', resetForm);
+
+// Initial calculation on page load
+generateExchangeRate();
