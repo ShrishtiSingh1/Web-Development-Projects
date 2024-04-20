@@ -1,0 +1,191 @@
+(1) HTML Code -
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Game</title>
+    <link rel="stylesheet" href="ttt.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Tic-Tac-Toe Game</h2>
+        </div>
+        <div class="congo-msg">
+                <h2 id="msg" class="hide"></h2>
+           </div>
+            <div class="gameBox">
+                <div class="box align">0</div>
+                <div class="box align">1</div>
+                <div class="box align">2</div>
+                <div class="box align">3</div>
+                <div class="box align">4</div>
+                <div class="box align">5</div>
+                <div class="box align">6</div>
+                <div class="box align">7</div>
+                <div class="box align">8</div>
+            </div>
+            <div class="buttons">
+                <button id="playAgainBtn">Play Again</button>
+                <button id="resetBtn">Reset Game</button>
+            </div> 
+    </div>
+    <script src="ttt.js"></script>
+</body>
+</html>
+
+
+
+(2) CSS Code -
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+    text-align: center;
+}
+
+body{
+    background-color: #252A34;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.congo-msg #msg{
+    color: #ffffc7;
+    padding-top: 30px;
+    font-size: 35px;
+}
+
+.gameBox{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: 350px;
+    width: 350px;
+    margin: 30px auto;
+    border: 2px solid #fff;
+    margin-top: 100px;
+}
+
+.box{
+    border: 2px solid #fff;
+    padding-top: 30px;
+    font-size: 40px;
+    font-weight: 550;
+    cursor: pointer;
+}
+
+.box:hover{
+    background-color: #ffffc7;
+    color: red;
+}
+
+.buttons #playAgainBtn, #resetBtn{
+    cursor: pointer;
+    height: 40px;
+    width: 100px;
+    background-color: rgb(233, 72, 72);
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+}
+
+#playAgainBtn:hover, #resetBtn:hover{
+    background-color: #ffffc7;
+    color: red;
+    font-weight: 550;
+}
+
+#playAgainBtn{
+    margin-right: 20px;
+}
+
+.hide{
+    display: none;
+    visibility: hidden;
+}
+
+
+
+(3) JavaScript Code -
+
+let boxes = document.querySelectorAll(".box");
+let turn = "X";
+let isGameOver = false;
+
+boxes.forEach(box => {
+    box.innerHTML = "";
+    box.addEventListener("click", () => {
+        if (!isGameOver && box.innerHTML === "") {
+            box.innerHTML = turn;
+            checkWin();
+            checkDraw();
+            changeTurn();
+        }
+    });
+});
+
+function changeTurn() {
+    turn = turn === "X" ? "O" : "X";
+}
+
+function checkWin() {
+    const winningCombinations = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+        [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
+        [0, 4, 8], [2, 4, 6]             // Diagonals
+    ];
+
+    for (let i = 0; i<winningCombinations.length; i++) {
+        let v0 = boxes[winningCombinations[i][0]].innerHTML;
+        let v1 = boxes[winningCombinations[i][1]].innerHTML;
+        let v2 = boxes[winningCombinations[i][2]].innerHTML;
+
+        if(v0 != "" && v0 === v1 && v0 === v2) {
+            isGameOver = true;
+            const messageElement = document.getElementById("msg");
+            messageElement.innerText = `Congratulations! 🎉 Winner is ${v0}`;
+            messageElement.classList.remove("hide");
+        }
+    }
+}
+
+function checkDraw() {
+    if(!isGameOver) {
+        let isDraw = true;
+        boxes.forEach(e => {
+            if(e.innerHTML === "") isDraw = false;
+        })
+            if(isDraw) {
+                isGameOver = true;
+                const messageElement = document.getElementById("msg");
+                messageElement.innerText = "It's a draw! 😐";
+                messageElement.classList.remove("hide");
+            }
+    }
+}
+
+document.getElementById("playAgainBtn").addEventListener("click", resetGame);
+document.getElementById("resetBtn").addEventListener("click", resetGame);
+
+function resetGame() {
+    isGameOver = false;
+    const messageElement = document.getElementById("msg");
+    messageElement.classList.add("hide");
+
+    boxes.forEach(box => {
+        box.innerHTML = "";
+    });
+
+    turn = "X";
+}
