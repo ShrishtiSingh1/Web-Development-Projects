@@ -1,0 +1,132 @@
+(1) HTML Code -
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <h1 class="text-centre">CALCULATOR</h1>
+    <div class="container">
+        <div class="Calci">
+            <div class="input">
+                <div class="display">
+                    <input type="text" name="display" id="display"> 
+                </div>
+                <div >
+                    <input type="button" value="1" onclick= "display.value += '1' ">
+                    <input type="button" value="2" onclick= "display.value += '2' ">
+                    <input type="button" value="3" onclick= "display.value += '3' ">
+                    <input type="button" value="+" onclick= "display.value += '+' "  id="operation">
+                </div>
+                <div>
+                    <input type="button" value="4" onclick= "display.value += '4' ">
+                    <input type="button" value="5" onclick= "display.value += '5' ">
+                    <input type="button" value="6" onclick= "display.value += '6' ">
+                    <input type="button" value="-" onclick= "display.value += '-' "  id="operation">
+                </div>
+                <div>
+                    <input type="button" value="7" onclick= "display.value += '7' ">
+                    <input type="button" value="8" onclick= "display.value += '8' ">
+                    <input type="button" value="9" onclick= "display.value += '9' ">
+                    <input type="button" value="*" onclick= "display.value += '*' "  id="operation">
+                </div>
+                <div>
+                    <input type="button" value="0" onclick= "display.value += '0' ">
+                    <input type="button" value="00" onclick= "display.value += '00' ">
+                    <input type="button" value="." onclick= "display.value += '.' ">
+                    <input type="button" value="/" onclick= "display.value += '/' "  id="operation">
+                </div>
+                <div>
+                    <input type="button" value="AC" onclick= "display.value = ' ' "  id="operation">
+                    <input type="button" value="DE" onclick= "display.value = display.value.toString().slice(0,-1) "  id="operation">
+                    <input type="button" value="="  onclick= "display.value = eval(display.value)"  id="equals" id="operation">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+(2) CSS Code - 
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+    box-sizing: border-box;
+}
+
+h1{
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to right, #f9a470, #bc556f);
+    font-size: 50px; 
+}
+
+.text-centre{
+    text-align: center;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right, #f9a470, #bc556f);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Calci{
+    background: black;
+    padding: 20px;
+    border-radius: 10%;
+    margin: 0px;
+}
+
+.Calci .display{
+    width: 352px;
+    height: 80px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.Calci .display input{
+    height: 57px;
+    text-align: right;
+    flex: 1;
+    font-size: 29px;
+    border-radius: 0%;
+    border-width: 6px;
+}
+
+.Calci input{
+    width: 60px;
+    height: 50px;
+    border-radius: 40%;
+    border-color: #caf0f8;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+    color: #fff;
+}
+
+#equals{
+    width: 145px;
+    border-radius: 16%;
+    background-color: #f94144;
+    color: black;
+}
+
+#operation{
+    width: 71px;
+    background-color: #f94144;
+    color: black;
+}
