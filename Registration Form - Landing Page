@@ -1,0 +1,402 @@
+(1) HTML Code - 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Lemon</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="registration_login_form.css">
+</head>
+<body>
+<div class="container">
+    <!-- navigation bar  -->
+    <nav class="nav">
+        <div class="nav-tittle">
+            <p>Little Lemon</p>
+        </div>
+        <div class="nav-menu">
+            <ul>
+                <li><a href="#" class="link active">Home</a></li>
+                <li><a href="#" class="link">About Us</a></li>
+                <li><a href="#" class="link">Services</a></li>
+                <li><a href="#" class="link">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="nav-button">
+            <button class="btn white-btn" id="loginbtn" onclick="login()">Sign In</button>
+            <button class="btn" id="registerbtn" onclick="register()">Sign Up</button>
+        </div>
+    </nav>
+    
+    <!-- form container-->
+    <div class="form-container"> 
+        
+        <!-- login form -->
+        <div class="login-container" id="login">
+            <div class="top">
+                <header>Login</header>
+            </div>
+            <div>
+                <div class="input-box">
+                    <input type="email" class="input-by-user-1" placeholder="Username or Email" required>
+                    <i class='bx bx-user' alt="User"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-by-user-1" placeholder="Password" required>
+                    <i class='bx bx-lock' alt="Lock"></i>
+                </div>
+                <div class="two-col">
+                    <div class="first-col">
+                        <input type="checkbox" id="login-check">
+                        <label for="login-check">Remember Me</label>
+                    </div>
+                    <div class="second-col">
+                        <label><a href="#">Forgot Password?</a></label>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Login">
+                </div>
+                <div class="top">
+                    <span>Don't have an account? <a href="#" onclick="register()">Sign Up</a></span>
+                </div>
+            </div>
+        </div> 
+
+        <!-- registration form -->
+        <div class="registration-container" id="registration">
+            <div class="top">
+                <header>Sign Up</header>
+            </div>
+            <div>
+                <div class="input-box">
+                    <input type="text" class="input-by-user-2" placeholder="First Name" required>
+                    <i class='bx bx-user' alt="User"></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-by-user-2" placeholder="Last Name" required>
+                    <i class='bx bx-user' alt="User"></i>
+                </div>
+                <div class="input-box">
+                    <input type="email" class="input-by-user-2" placeholder="Email" required>
+                    <i class='bx bx-envelope' alt="Envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-by-user-2" placeholder="Password" required>
+                    <i class='bx bx-lock' alt="Lock"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-by-user-2" placeholder="Confirm Password" required>
+                    <i class='bx bx-lock' alt="Lock"></i>
+                </div>
+                <div class="two-col">
+                    <div class="first-col">
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">Remember Me</label>
+                    </div>
+                    <div class="second-col">
+                        <label><a href="#">Terms & Conditions Applied</a></label>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Register Me">
+                </div>
+                <div class="top">
+                    <span>Already have an account? <a href="#" onclick="login()">Login</a></span>
+                </div>
+            </div>
+       </div>
+    </div>    
+</div>
+
+<script src="registration_login_form.js"></script>
+</body>
+</html>
+
+
+
+(2) CSS Code -
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+}
+
+body{
+    background: url("ll1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 110vh;
+}
+
+.nav{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    z-index: 100;
+}
+
+.nav-tittle p{
+    color: #090573;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.nav-tittle:hover{
+    border-bottom: 2px solid #090573;
+    transition: 0.2s ease;
+}
+
+.nav-menu ul{
+    display: flex;
+}
+
+.nav-menu ul li{
+    list-style-type: none;
+}
+
+.nav-menu ul li .link{
+    text-decoration: none;
+    font-weight: 500;
+    color: #090573;
+    padding-bottom: 15px;
+    margin: 0 25px;
+}
+
+.link:hover, .active{
+    border-bottom: 2px solid #090573;
+    transition: 0.2s ease;
+}
+
+.nav-button .btn{
+    width: 130px;
+    height: 40px;
+    font-weight: 700;
+    background: #b4b4b4;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#registerbtn{
+    margin-left: 15px;
+}
+
+.btn.white-btn{
+    background: #757674;
+}
+
+.btn:hover{
+    background: #fff;
+    color: #090573;
+}
+
+.nav-menu-btn{
+    display: none;
+} 
+
+.form-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 540px;
+    height: 505px;
+    overflow: hidden;
+    border: 1px solid  rgb(202, 201, 201);
+    box-shadow: -10px 10px 50px rgb(151, 146, 146);
+    z-index: 2;
+}
+
+.login-container{
+    position: absolute;
+    left: 4px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease-in-out;
+}
+
+.registration-container{
+    position: absolute;
+    right: -520px;
+    width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease-in-out;
+}
+
+.top span{
+    color: black;
+    padding: 10px 0;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+}
+
+.top span a{
+    font-weight: 800;
+    margin-left: 5px;
+    /* text-decoration: none; */
+}
+
+header{
+    color: black;
+    font-size: 30px;
+    font-weight: 550;
+    text-align: center;
+    padding: 0px 0 20px 0;
+}
+
+.two-forms{
+    display: flex;
+    /* gap: 10px; */
+}
+
+.input-box{
+    text-align: center;
+}
+
+.input-by-user{
+    font-size: 17px;
+    padding: 5px 5px 5px 25px;
+    background: rgba(255, 255, 255, 0.2);
+    height: 50px;
+    width: 100%;
+    color: black;
+    border: 1.5px solid black;
+    border-radius: 30px;
+    outline: none;
+    transition: 0.2s ease; 
+}
+
+.input-by-user-1{
+    margin-top: 5px;
+    font-size: 17px;
+    padding: 5px 5px 5px 25px;
+    background: rgba(255, 255, 255, 0.2);
+    height: 50px;
+    width: 100%;
+    color: black;
+    border: 1.5px solid black;
+    border-radius: 30px;
+    outline: none;
+    transition: 0.2s ease; 
+}
+
+.input-by-user-2{
+    margin-top: 1px;
+    font-size: 17px;
+    padding: 5px 5px 5px 25px;
+    background: rgba(255, 255, 255, 0.2);
+    height: 47px;
+    width: 100%;
+    color: black;
+    border: 1.5px solid black;
+    border-radius: 30px;
+    outline: none;
+    transition: 0.2s ease; 
+}
+
+.input-box i{
+    position: relative;
+    display: flex;
+    /* flex-direction: row; */
+    gap: 0px;
+    top: -30px;
+    right: -470px; 
+
+}
+
+.input-by-user-1:hover, .input-by-user:focus{
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.input-by-user-2:hover, .input-by-user:focus{
+    background: rgba(255, 255, 255, 0.7);
+}
+
+::-webkit-input-placeholder{
+    color: black;
+}
+
+.submit{
+    color: black;
+    height: 50px;
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    margin-top: 29px;
+    font-size: 15px;
+    font-weight: 500;
+    outline: none;
+    cursor: pointer;
+    background: rgb(122, 254, 122);
+    transition: 0.3s ease-in-out;
+}
+
+.submit:hover{
+    background: rgb(77, 252, 77);
+    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+}
+
+.two-col{
+    display: flex;
+    justify-content: space-between;
+    font-size: small;
+    /* margin-top: 10px; */
+}
+
+.two-col .first-col{
+    display: flex;
+    gap: 5px;
+}
+
+.two-col:hover{
+    text-decoration: underline;
+}
+
+
+
+(3) JavaScript Code - 
+
+var a = document.getElementById("loginbtn");
+var b = document.getElementById("registerbtn");
+var c = document.getElementById("login");
+var d = document.getElementById("registration");
+
+function login(){
+c.style.left = "4px";
+d.style.right = "-520px";
+a.className  += " white-btn";
+b.className = "btn";
+c.style.opacity = 1;
+d.style.opacity = 0;
+}
+
+function register(){
+c.style.left = "-510px";
+d.style.right = "5px";
+a.className  = "btn";
+b.className += " white-btn";
+c.style.opacity = 0;
+d.style.opacity = 1;
+}
